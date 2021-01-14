@@ -112,83 +112,13 @@
     },
     {
       "titulo": "Tenet",
-      "urlFoto": "https://www.imdb.com/title/tt6723592/mediaviewer/rm1748282625?ref_=tt_ov_i",
+      "urlFoto": "https://upload.wikimedia.org/wikipedia/en/1/14/Tenet_movie_poster.jpg",
       "dtLancamento": "2021-01-04T03:00:00.000Z",
       "descricao": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
       "nota": 7.5,
       "urlIMDb": "",
       "genero": "Aventura",
       "id": 12
-    },
-    {
-      "titulo": "teste",
-      "urlFoto": "",
-      "dtLancamento": "2021-01-04T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Aventura",
-      "id": 13
-    },
-    {
-      "titulo": "teste3",
-      "urlFoto": "",
-      "dtLancamento": "2021-01-04T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Aventura",
-      "id": 14
-    },
-    {
-      "titulo": "teste3",
-      "urlFoto": "",
-      "dtLancamento": "2021-01-04T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Aventura",
-      "id": 15
-    },
-    {
-      "titulo": "teste",
-      "urlFoto": "",
-      "dtLancamento": "2021-01-03T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Aventura",
-      "id": 16
-    },
-    {
-      "titulo": "teste",
-      "urlFoto": "",
-      "dtLancamento": "2021-01-15T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Romance",
-      "id": 17
-    },
-    {
-      "titulo": "dasadas",
-      "urlFoto": "",
-      "dtLancamento": "2021-01-05T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Ficção Cientifica",
-      "id": 18
-    },
-    {
-      "titulo": "dsdasdafasf",
-      "urlFoto": "",
-      "dtLancamento": "2021-01-02T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Comédia",
-      "id": 19
     }
   ]
 }

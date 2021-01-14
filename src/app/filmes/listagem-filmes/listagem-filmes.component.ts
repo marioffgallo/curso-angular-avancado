@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators';
+import { FilmesService } from 'src/app/core/filmes.service';
+import { ConfigParams } from 'src/app/shared/models/config-params';
+import { Filme } from 'src/app/shared/models/filme';
 
 @Component({
   selector: 'dio-listagem-filmes',
@@ -7,13 +12,64 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListagemFilmesComponent implements OnInit {
 
-  constructor() { }
+  readonly semFoto = 'https://thumbs.dreamstime.com/b/no-image-available-icon-vector-illustration-flat-design-140476186.jpg';
 
-  ngOnInit() {
-
+  config: ConfigParams = {
+    pagina: 0,
+    limite: 5
   }
 
-  open() {
+  filmes: Filme[] = [];
+  filtrosListagem: FormGroup;
+  generos: Array<string>;
+  
+  constructor(private filmesService: FilmesService,
+              private fb: FormBuilder) { }
+
+  ngOnInit(): void {
+    this.filtrosListagem = this.fb.group({
+      texto: [''],
+      genero: ['']
+    });
+
+    this.filtrosListagem.get('texto').valueChanges
+    .pipe(debounceTime(400))
+    .subscribe((val: string) => {
+      this.config.pesquisa = val;
+      this.resetarConsulta();
+    });
+
+    this.filtrosListagem.get('genero').valueChanges.subscribe((val: string) => {
+      this.config.campo = {tipo: 'genero', valor: val};
+      this.resetarConsulta();
+    });
+
+    this.generos = [
+      'Ação',
+      'Aventura',
+      'Romance',
+      'Ficção Cientifica',
+      'Terror',
+      'Comédia',
+      'Drama',
+    ];
+
+    this.listarFilmes();
   }
 
+  onScroll(): void {
+    this.listarFilmes();
+  }
+
+  private listarFilmes(): void {
+    this.config.pagina++;
+    this.filmesService.listar(this.config)
+    .subscribe((filmes: Filme[]) => this.filmes.push(...filmes));
+  }
+
+  private resetarConsulta(): void {
+    this.config.pagina = 0;
+    this.filmes = [];
+    this.listarFilmes();
+  }
 }
